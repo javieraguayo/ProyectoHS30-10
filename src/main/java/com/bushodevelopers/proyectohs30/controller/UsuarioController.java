@@ -3,7 +3,7 @@ package com.bushodevelopers.proyectohs30.controller;
 import com.bushodevelopers.proyectohs30.model.Usuario;
 import com.bushodevelopers.proyectohs30.controller.util.JsfUtil;
 import com.bushodevelopers.proyectohs30.controller.util.PaginationHelper;
-import com.bushodevelopers.proyectohs30.ejb.UsuarioFacade;
+import com.bushodevelopers.proyectohs30.ejb.UsuarioFacadeAuto;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -25,7 +25,7 @@ public class UsuarioController implements Serializable {
     private Usuario current;
     private DataModel items = null;
     @EJB
-    private com.bushodevelopers.proyectohs30.ejb.UsuarioFacade ejbFacade;
+    private com.bushodevelopers.proyectohs30.ejb.UsuarioFacadeAuto ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -40,7 +40,7 @@ public class UsuarioController implements Serializable {
         return current;
     }
 
-    private UsuarioFacade getFacade() {
+    private UsuarioFacadeAuto getFacade() {
         return ejbFacade;
     }
 

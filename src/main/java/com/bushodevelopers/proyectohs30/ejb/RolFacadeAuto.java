@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author javie
  */
 @Stateless
-public class RolFacade extends AbstractFacade<Rol> implements RolFacadeLocal {
+public class RolFacadeAuto extends AbstractFacadeAuto<Rol> {
 
     @PersistenceContext(unitName = "com.bushoDevelopers_proyectoHS30-10_war_1.0PU")
     private EntityManager em;
@@ -25,7 +25,7 @@ public class RolFacade extends AbstractFacade<Rol> implements RolFacadeLocal {
         return em;
     }
 
-    public RolFacade() {
+    public RolFacadeAuto() {
         super(Rol.class);
     }
     

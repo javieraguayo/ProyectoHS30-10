@@ -3,7 +3,7 @@ package com.bushodevelopers.proyectohs30.controller;
 import com.bushodevelopers.proyectohs30.model.Rol;
 import com.bushodevelopers.proyectohs30.controller.util.JsfUtil;
 import com.bushodevelopers.proyectohs30.controller.util.PaginationHelper;
-import com.bushodevelopers.proyectohs30.ejb.RolFacade;
+import com.bushodevelopers.proyectohs30.ejb.RolFacadeAuto;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -25,7 +25,7 @@ public class RolController implements Serializable {
     private Rol current;
     private DataModel items = null;
     @EJB
-    private com.bushodevelopers.proyectohs30.ejb.RolFacade ejbFacade;
+    private com.bushodevelopers.proyectohs30.ejb.RolFacadeAuto ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -40,7 +40,7 @@ public class RolController implements Serializable {
         return current;
     }
 
-    private RolFacade getFacade() {
+    private RolFacadeAuto getFacade() {
         return ejbFacade;
     }
 

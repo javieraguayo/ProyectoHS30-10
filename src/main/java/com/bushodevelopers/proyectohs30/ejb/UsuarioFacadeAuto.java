@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author javie
  */
 @Stateless
-public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFacadeLocal {
+public class UsuarioFacadeAuto extends AbstractFacadeAuto<Usuario> {
 
     @PersistenceContext(unitName = "com.bushoDevelopers_proyectoHS30-10_war_1.0PU")
     private EntityManager em;
@@ -27,11 +27,10 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
         return em;
     }
 
-    public UsuarioFacade() {
+    public UsuarioFacadeAuto() {
         super(Usuario.class);
     }
     
-     @Override
     public Usuario iniciarSesion(Usuario us){
         Usuario usuario = null;
         String consulta;
@@ -53,5 +52,4 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
         }
         return usuario;
     }
-    
 }
