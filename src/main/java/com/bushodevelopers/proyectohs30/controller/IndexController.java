@@ -63,4 +63,21 @@ public class IndexController implements Serializable{
         
     }
     
+    public void verificarSesion() {
+        
+        try {
+            //accedo a la session del usuario
+            Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+            if (us == null) {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("./../permisos.xhtml");
+            }
+        } catch (Exception e) {
+            //log para guardar registro
+        }
+    }
+    
+    public void cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        
+    }
 }
