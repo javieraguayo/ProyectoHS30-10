@@ -11,9 +11,10 @@ import com.bushodevelopers.proyectohs30.model.Usuario;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
+
 import javax.inject.Named;
 
 /**
@@ -21,7 +22,7 @@ import javax.inject.Named;
  * @author javie
  */
 @Named
-@ViewScoped
+@SessionScoped
 public class IndexController implements Serializable{
     
     @EJB
