@@ -4,6 +4,7 @@ import com.bushodevelopers.proyectohs30.model.Rol;
 import com.bushodevelopers.proyectohs30.controller.util.JsfUtil;
 import com.bushodevelopers.proyectohs30.controller.util.PaginationHelper;
 import com.bushodevelopers.proyectohs30.ejb.RolFacadeAuto;
+import com.bushodevelopers.proyectohs30.model.Usuario;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -230,6 +231,19 @@ public class RolController implements Serializable {
             }
         }
 
+    }
+    
+    public void verificarSesion() {
+        
+        try {
+            //accedo a la session del usuario
+            Usuario us = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+            if (us == null) {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("./../permisos.xhtml");
+            }
+        } catch (Exception e) {
+            //log para guardar registro
+        }
     }
 
 }

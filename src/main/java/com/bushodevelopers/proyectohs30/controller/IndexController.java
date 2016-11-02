@@ -51,7 +51,7 @@ public class IndexController implements Serializable{
             if (us!= null) {
                 //alamcenar session jsf
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", us);
-                redireccion = "/PaginaPrincipal/principal?faces-redirect=true";//faces-redirect=true //navegacion explicita
+                redireccion = "/PaginaPrincipal/principal";//faces-redirect=true //navegacion explicita
             }else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Aviso", "Credenciales incorrectas"));
             }

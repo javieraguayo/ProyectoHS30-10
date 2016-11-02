@@ -4,8 +4,15 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+    <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <f:event type="preRenderView" listener="#{indexController.verificarSesion()}"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
     <ui:composition template="/template.xhtml">
+        
         <ui:define name="title">
             <h:outputText value="#{bundle.ListUsuarioTitle}"></h:outputText>
         </ui:define>
@@ -90,7 +97,7 @@
                 <h:commandLink action="#{usuarioController.prepareCreate}" value="#{bundle.ListUsuarioCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>
+                <h:link outcome="/PaginaPrincipal/principal" value="#{bundle.ListUsuarioIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -21,14 +21,14 @@ and open the template in the editor.
     <h:body>
         Hello from Facelets
         <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <h:link outcome="/welcomePrimefaces" value="Primefaces welcome page" />
         <br />
         <h:link outcome="/rol/List" value="Show All Rol Items"/>
         <br />
         <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
         <br/>
         <h:form><!--commandButton siempre dentro de un form-->
-            <p:commandButton actionListener="#{indexController.cerrarSesion()}" icon="ui-icon-power" action="/index??faces-redirect=true" title="Cerrar Sesion"/>
+            <p:commandButton actionListener="#{indexController.cerrarSesion()}" value="Cerrar sesion" action="/index" title="Cerrar Sesion"/>
         </h:form>
 
 
