@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateResponsableTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateResponsableLabel_id_responsable}" for="id_responsable" />
+                    <h:inputText id="id_responsable" value="#{responsableController.selected.id_responsable}" title="#{bundle.CreateResponsableTitle_id_responsable}" />
+                    <h:outputLabel value="#{bundle.CreateResponsableLabel_rut}" for="rut" />
+                    <h:inputText id="rut" value="#{responsableController.selected.rut}" title="#{bundle.CreateResponsableTitle_rut}" />
+                    <h:outputLabel value="#{bundle.CreateResponsableLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{responsableController.selected.nombres}" title="#{bundle.CreateResponsableTitle_nombres}" />
+                    <h:outputLabel value="#{bundle.CreateResponsableLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{responsableController.selected.apellidos}" title="#{bundle.CreateResponsableTitle_apellidos}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{responsableController.create}" value="#{bundle.CreateResponsableSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{responsableController.prepareList}" value="#{bundle.CreateResponsableShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateResponsableIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
