@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewBase_DatosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewBase_DatosLabel_id_bd}"/>
+                    <h:outputText value="#{base_DatosController.selected.id_bd}" title="#{bundle.ViewBase_DatosTitle_id_bd}"/>
+                    <h:outputText value="#{bundle.ViewBase_DatosLabel_nombre}"/>
+                    <h:outputText value="#{base_DatosController.selected.nombre}" title="#{bundle.ViewBase_DatosTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewBase_DatosLabel_motor}"/>
+                    <h:outputText value="#{base_DatosController.selected.motor}" title="#{bundle.ViewBase_DatosTitle_motor}"/>
+                    <h:outputText value="#{bundle.ViewBase_DatosLabel_version}"/>
+                    <h:outputText value="#{base_DatosController.selected.version}" title="#{bundle.ViewBase_DatosTitle_version}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{base_DatosController.destroyAndView}" value="#{bundle.ViewBase_DatosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewBase_DatosEditLink}"/>
+                <br />
+                <h:commandLink action="#{base_DatosController.prepareCreate}" value="#{bundle.ViewBase_DatosCreateLink}" />
+                <br />
+                <h:commandLink action="#{base_DatosController.prepareList}" value="#{bundle.ViewBase_DatosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewBase_DatosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
